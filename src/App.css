@@ -4,7 +4,7 @@
 
 div {
   font-size: 1.3em;
-  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Courier New", Courier, monospace; */
 }
 input[type="checkbox"] {
   -webkit-appearance: none;
