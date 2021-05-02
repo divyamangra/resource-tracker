@@ -75,7 +75,7 @@ function App() {
       </div>
       <div className="Medics">
         <div>
-          <input type="checkbox" name="Remidisvir" /> Remidisvir
+          <input type="checkbox" name="Remdesivir" /> Remdesivir
         </div>
         <div>
           <input type="checkbox" name="Tocilizumab" /> Tocilizumab
