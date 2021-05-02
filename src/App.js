@@ -17,6 +17,7 @@ function App() {
       Resources,
       "_blank" // <- This is what makes it open in a new window.
     );
+    window.location.reload();
   };
   let checkAll = e => {
     Resources += '"' + city + '" ' + TextResources + " OR ";
