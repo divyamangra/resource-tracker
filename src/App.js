@@ -48,88 +48,91 @@ function App() {
       <div className="title">
         <h3>Twitter Covid Resource Tracker</h3>
       </div>
-      <div className="location">
-        <label> State </label>
-        <select
-          value={State}
-          onChange={e => {
-            setState(e.target.value);
-            setCity(StateCities[e.target.value][0]);
-          }}
-        >
-          {listOfStates.map(option => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-        <br />
-        <label> City </label>
-        <select value={city} onChange={e => setCity(e.target.value)}>
-          {StateCities[State].map(option => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="Medics">
-        <div>
-          <input type="checkbox" name="Remdesivir" /> Remdesivir
+      <div>
+        <div className="location">
+          <label> State </label>
+          <select
+            value={State}
+            onChange={e => {
+              setState(e.target.value);
+              setCity(StateCities[e.target.value][0]);
+            }}
+          >
+            {listOfStates.map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <br />
+          <label style={{ marginLeft: "0em" }}> City&nbsp;&nbsp; </label>
+          <select value={city} onChange={e => setCity(e.target.value)}>
+            {StateCities[State].map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
-        <div>
-          <input type="checkbox" name="Tocilizumab" /> Tocilizumab
+        <div className="Medics">
+          <div>
+            <input type="checkbox" name="Remdesivir" /> Remdesivir
+          </div>
+          <div>
+            <input type="checkbox" name="Tocilizumab" /> Tocilizumab
+          </div>
+          <div>
+            <input type="checkbox" name="Fabiflu" /> Fabiflu
+          </div>
+          <div>
+            <input type="checkbox" name="Favipiravir" /> Favipiravir
+          </div>
+          {/* </div> */}
+          {/* <div className="hospital_beds"> */}
+          <div>
+            <input type="checkbox" name="Beds" /> Hospitals Beds
+          </div>
+          <div>
+            <input type="checkbox" name="ICU" /> ICU Beds
+          </div>
+          <div>
+            <input type="checkbox" name="Ventilator" /> Ventilator
+          </div>
+          {/* </div> */}
+          {/* <div className="oxygen_supplies"> */}
+          <div>
+            <input type="checkbox" name="Oxygen" /> Oxygen Cylinder
+          </div>
+          <div>
+            <input type="checkbox" name="Concentrator" /> Oxygen Concentrator
+          </div>
+          <div>
+            <input type="checkbox" name="Plasma" /> Plasma
+          </div>
+          {/* </div> */}
+          {/* <div className="otherResc"> */}
+          <div>
+            <input type="checkbox" name="Food" /> Food
+          </div>
+          <div>
+            <input type="checkbox" name="Ambulance" /> Ambulance
+          </div>
         </div>
-        <div>
-          <input type="checkbox" name="Fabiflu" /> Fabiflu
-        </div>
-        <div>
-          <input type="checkbox" name="Favipiravir" /> Favipiravir
-        </div>
-      </div>
-      <div className="hospital_beds">
-        <div>
-          <input type="checkbox" name="Beds" /> Hospitals Beds
-        </div>
-        <div>
-          <input type="checkbox" name="ICU" /> ICU Beds
-        </div>
-        <div>
-          <input type="checkbox" name="Ventilator" /> Ventilator
-        </div>
-      </div>
-      <div className="oxygen_supplies">
-        <div>
-          <input type="checkbox" name="Oxygen" /> Oxygen Cylinder
-        </div>
-        <div>
-          <input type="checkbox" name="Concentrator" /> Oxygen Concentrator
-        </div>
-        <div>
-          <input type="checkbox" name="Plasma" /> Plasma
-        </div>
-      </div>
-      <div className="otherResc">
-        <div>
-          <input type="checkbox" name="Food" /> Food
-        </div>
-        <div>
-          <input type="checkbox" name="Ambulance" /> Ambulance
-        </div>
-      </div>
-      <div className="textresources">
-        <label>Other Resources</label>
-        <input
-          type="text"
-          name="OtherResources"
-          className="text_field"
-          onChange={e => setTextResources(e.target.value)}
-        />
 
-        <div className="text_message">
-          (Please provide 'OR' keyword in-between, if adding more than one
-          resource in the box)
+        <div className="textresources">
+          <label>Other Resources &nbsp;</label>
+          <input
+            type="text"
+            name="OtherResources"
+            className="text_field"
+            onChange={e => setTextResources(e.target.value)}
+            style={{ fontSize: "1em" }}
+          />
         </div>
+      </div>
+      <div className="text_message">
+        (Please provide 'OR' keyword in-between, if adding more than one
+        resource in the box)
       </div>
       <div className="submit">
         <button className="submit_button" onClick={checkAll}>
